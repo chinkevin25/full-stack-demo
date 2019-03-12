@@ -19,3 +19,5 @@ First, let's follow the principle of separation of concerns and create the `serv
 Within the `server` folder, create a `server.js` file.
 
 We will then build the most basic server inside of `server.js`.
+
+In the `step 2` we will add some basic functionality to our server.
