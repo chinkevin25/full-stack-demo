@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-demo",
+  "version": "1.0.0",
+  "description": "A mini application to walkthrough how a fullstack applicaiton is built",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinkevin25/full-stack-demo.git"
+  },
+  "author": "Kevin Chin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chinkevin25/full-stack-demo/issues"
+  },
+  "homepage": "https://github.com/chinkevin25/full-stack-demo#readme"
+}
