@@ -1,8 +1,14 @@
-# STEP 0: Project Initialization
+# STEP 1: Creating a basic server
 
-First we create run `npm init` in terminal to begin a new project.
-  > This will prompt us to fill out information relating to the project. For more information refer to the [package.json documentation](https://docs.npmjs.com/files/package.json) for more information.
+We will now install the necessary packages and create the necessary files for a basic server.
 
-This will create the `package.json` file.
+# Installing the necessary packages
 
-In `Step 1` we will install the necessary packages to create a very basic server.
+To create the most basic server, we need to install `ExpressJS`:
+
+`npm install express --save`
+
+#### An aside on dependencies:
+Running `npm i -S express` is the same as the above. `--save` adds the specified dependencies to our `package.json`. It is best practice to include all of the dependencies required for our program to run in our package.json. 
+
+Libraries that are not function critical but are critical during the development process will be added to the developer dependencies by using `--save-dev` or `-D`.
