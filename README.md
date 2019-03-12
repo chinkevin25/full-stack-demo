@@ -5,4 +5,4 @@ First we create run `npm init` in terminal to begin a new project.
 
 This will create the `package.json` file.
 
-In `Step 1` we will install the necessary packages to create a very basic server
+In `Step 1` we will install the necessary packages to create a very basic server.
