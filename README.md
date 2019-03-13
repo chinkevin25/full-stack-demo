@@ -14,3 +14,8 @@ npm i -D webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/p
 
 # webpack.config.js
 Now that we have all of our dependencies, we need to create our `webpack.config.js` file.
+
+# Rendering React to the DOM
+Now that we have webpack configured to transpile React. We can begin making our React Application.
+
+Create a `src` folder that will house all of our `JSX` code. This folder is where webpack will look to transpile all of our code to into a bundle that will live in the `public` folder. The `public` folder can also be called `dist` for distribution.
