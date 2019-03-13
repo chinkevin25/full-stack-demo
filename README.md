@@ -1,7 +1,16 @@
-# STEP 3: Creating the client
+# STEP 3: Setting up React
 
-Let's now create a simple client. Lets create a `public` folder with an extremely barebone `index.html` file that will be served up by our server.
+We will be using Babel and Webpack to transpile and bundle our extremely simple front-end. This walkthrough will not go into the details of Webpack but there are very great getting started guides located in the offical docs [here](https://webpack.js.org/guides/getting-started/).
 
-Once we serve our static assets that live in the public folder with `express.static()` we can type `localhost:3000` in our browser and the `index.html` page will be displayed!
+# Installing the require dependencies
+To get this to work we need to install a few packages. We can run
+```sh
+npm i -S react react-dom
+```
+```sh
+npm i -D webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/preset-react
+```
+> TIP: We can install multiple packages at once by separating them with spaces.
 
-We now technically have a client and a server that are connected! But this is not a very interesting application. Let's make this more interesting in the `Step 4` by introducing React.
+# webpack.config.js
+Now that we have all of our dependencies, we need to create our `webpack.config.js` file.
