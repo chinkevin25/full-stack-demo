@@ -1,7 +1,7 @@
 {
   "name": "full-stack-demo",
   "version": "1.0.0",
-  "description": "A mini application to walkthrough how a fullstack applicaiton is built",
+  "description": "A walkthrough of building a fullstack application using Node, Express, MongoDB and React",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
