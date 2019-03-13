@@ -19,6 +19,7 @@
   "homepage": "https://github.com/chinkevin25/full-stack-demo#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "jquery": "^3.3.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
