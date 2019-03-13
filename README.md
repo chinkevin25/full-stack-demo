@@ -8,6 +8,10 @@ To create the most basic server, we need to install `ExpressJS`:
 
 `npm install express --save`
 
+As of `npm` version 5 we no longer need to use --save to save dependencies. We still need to use `--save-dev` or `-D` for developer dependencies.
+
+Use `npm --version` to check npm versions.
+
 #### An aside on dependencies:
 Running `npm i -S express` is the same as the above. `--save` adds the specified dependencies to our `package.json`. It is best practice to include all of the dependencies required for our program to run in our package.json. 
 
