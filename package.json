@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "server-dev": "nodemon server/server.js",
+    "server": "node server/server.js",
     "react-dev": "webpack -d -w"
   },
   "repository": {
