@@ -1,4 +1,4 @@
-# STEP 3: Setting up React
+# STEP 4: Setting up React
 
 We will be using Babel and Webpack to transpile and bundle our extremely simple front-end. This walkthrough will not go into the details of Webpack but there are very great getting started guides located in the offical docs [here](https://webpack.js.org/guides/getting-started/).
 
