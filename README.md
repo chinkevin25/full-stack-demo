@@ -22,9 +22,11 @@ We will then build the most basic server inside of `server.js`.
 
 # Launching the server
 Now that we have created the most basic server, we can launch the server by using:
-`node <filePath>` or in this case `node server/server.js`.
+node <filePath> or in this case node server/server.js if you are in the root directory.
 
-As we're developing our server, we can take advantage of `nodemon`. If `nodemon` has not been installed yet, install it globally by running `npm install -g nodemon`. We can then start the server in development mode with `nodemon server/server.js`.
+Running the server in this manner, however, has some limitations, namely we will need to quit and restart the server everytime we make changes. To avoid this as we're developing, we can take advantage of `nodemon`, which functions similarly to the `node` command but will watch for changes and automatically restart the application whenever we save.
+
+If `nodemon`has not been installed yet, install it globally by running `npm i -g nodemon`. The `-g` flag tells npm to install a package globally which will allow us to use the package from anywhere on our computer.
 #
 
 In the `step 2` we will add some basic functionality to our server.
