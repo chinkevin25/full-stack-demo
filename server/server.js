@@ -1,9 +1,13 @@
-// Begin by requiring the express module and initialize a new express application.
 const express = require('express');
+// import path so we can use the library to help us handle the creation of paths.
+const path = require('path');
 
 const app = express();
-// Configure the port with app.set
 app.set('port', process.env.PORT || 3000);
+
+// This allows us to serve our static files in public (html, images, js files, bundle.js) easily
+// The assets will be sent whenever there is a request to the endpoint '/'.
+app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.get('/api/cohort/:cohort', (request, response) => {
   console.log(`Registered a ${request.method} at ${request.url}`);
@@ -14,8 +18,6 @@ app.get('/api/cohort/:cohort', (request, response) => {
   response.send(retort);
 });
 
-// Lastly, we use app.listen to bind our application to a port and have the application
-// listen for incoming requests on that port number.
 app.listen(app.get('port'), () => {
   console.log(`Server started: http://localhost:${app.get('port')}/`);
 });
