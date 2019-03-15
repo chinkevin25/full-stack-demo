@@ -9,10 +9,16 @@ Use this as a **tool** to understand larger code bases. **Do not** memorize the 
 # Table of Contents
 
 `git checkout -f 0-initialization`
+
 `git checkout -f 1-create-server`
+
 `git checkout -f 2-create-routes`
+
 `git checkout -f 3-creating-the-client`
+
 `git checkout -f 4-setting-up-react`
+
 `git checkout -f 5-creating-requests`
+
 
 Use the command above to navigate between branches. 
