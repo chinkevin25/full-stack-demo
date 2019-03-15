@@ -21,4 +21,4 @@ Use this as a **tool** to understand larger code bases. **Do not** memorize the 
 `git checkout -f 5-creating-requests`
 
 
-Use the command above to navigate between branches. 
+Use the commands above to navigate between branches. 
