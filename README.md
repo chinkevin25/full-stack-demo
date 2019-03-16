@@ -1,6 +1,6 @@
 # STEP 6: Refactoring and creating a more sophisticated application
 
-Let's refactor our application so we can demonstrate a more complex application.
+Let's refactor our application into a simple messaging app.
 
 Many applications we build will need to support CRUD operations. CRUD stands for 
 
