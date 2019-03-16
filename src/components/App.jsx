@@ -5,46 +5,70 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cohort: '',
-      text: '',
+      messages: [],
+      newMessage: '',
     };
   }
 
-  // Notice that because our server and client live in the same location, our URL
-  // can be a relative URL. If this was not the case and our server and client lived
-  // it two different locations, we will need to update our URL.
-
-  makeTrivialRequest() {
+  // This function will handle fetching all the messages from the server.
+  getAllMessages() {
     $.ajax({
-      url: `/api/cohort/${this.state.cohort}`,
+      url: '/api/messages/',
       method: 'GET',
-      success: dataFromServer => this.setState({ text: dataFromServer }),
+      success: messages => this.setState({ messages }),
       error: errorFromServer => console.error(errorFromServer),
     });
   }
 
+  // This function will handle the creation of a new message.
+  createNewMessage() {
+    // object deconstruction. This is the same as writing:
+    // const newMessage = this.state.newMessage
+    const { newMessage } = this.state;
+    const payload = {
+      text: newMessage,
+    };
+    // Notice that the data is a stringified JSON object. The contentType will need to be specified
+    // so the server knows how to handle the information we're about to send.
+    $.ajax({
+      url: '/api/messages/',
+      method: 'POST',
+      data: JSON.stringify(payload),
+      contentType: 'application/json',
+      success: () => this.getAllMessages(),
+      error: err => console.error(err, 'error'),
+    });
+  }
+
   handleTextChange(e) {
-    this.setState({ cohort: e.target.value });
+    this.setState({ newMessage: e.target.value });
   }
 
   handleFormSubmit(e) {
+    // Many HTML elements have default behaviors. When a form is submitted it
+    // will try to navigate to a specified page. When a page is not specified,
+    // it will default to redirecting to the current page which will refresh the page
     e.preventDefault();
-    this.makeTrivialRequest();
+    this.createNewMessage();
   }
 
-
-  // Notice that when we pass our functions into our event listeners we are using the fat
-  // arrow syntax. This makes us not need to use fn.bind(this) in our constructor to make sure
-  // our this binding is correct. The fat arrow this has slightly different this  binding rules
-
   render() {
+    const messages = this.state.messages.map(msg => <div key={msg.createdAt}>{msg.text}</div>);
     return (
       <div>
-        <h1>{this.state.text || 'Input a cohort number'}</h1>
         <form onSubmit={e => this.handleFormSubmit(e)}>
-          <input type="text" placeholder="cohort number" onChange={e => this.handleTextChange(e)} />
+          <input
+            type="text"
+            placeholder="What's your message"
+            onChange={e => this.handleTextChange(e)}
+            // It's the React way to make inputs controlled by state. React needs to know what
+            // is in the input box.
+            value={this.state.newMessage}
+          />
           <input type="submit" />
         </form>
+        Messages:
+        {messages}
       </div>
     );
   }
