@@ -5,7 +5,7 @@ const path = require('path');
 // correctly.
 const morgan = require('morgan');
 // cors is a useful library that helps handle our cross origin requests for us!
-//  Refer to the documentation to see what options are available.
+// Refer to the documentation to see what options are available.
 const cors = require('cors');
 
 const app = express();
