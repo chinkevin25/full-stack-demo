@@ -17,19 +17,42 @@ app.use(morgan('dev'));
 // Initalize cors as a middleware in the default mode. This will enable CORS for all origins
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('This is our GET route');
+// Notice that this middleware is not in our package.json. This comes free with express.
+// express.json is a middleware based on body-parser and will help us parse JSON data and
+// automatically add the information to req.body
+app.use(express.json());
+
+// Let's create a non-persistent datastore until we introduce databases!
+const messages = [];
+
+app.get('/api/messages/', (req, res) => {
+  // Send all the messages back to the requester
+  res.send(messages);
 });
 
-app.post('/', (req, res) => {
-  res.send('This is our POST route');
+app.post('/api/messages', (req, res) => {
+  const newMessage = {
+    text: req.body.text,
+    createdAt: new Date(),
+  };
+  // Add message to our in-memory (non-persistent datastore)
+  messages.push(newMessage);
+  res.status(201); // Status code 201 means item has successfuly been created.
+
+  // It's common for the item that has been created to be returned back to the
+  // requester. Often the server will add some extra information (e.g. createdAt)
+  // and then save it to the datastore.
+
+  // Typically it's not kosher to send the entire datastore back to the client
+  // in a POST request. Handle reading from the datastore with a GET request.
+  res.send(newMessage);
 });
 
-app.put('/', (req, res) => {
+app.put('/api/messages', (req, res) => {
   res.send('This is our UPDATE route');
 });
 
-app.delete('/', (req, res) => {
+app.delete('/api/messages', (req, res) => {
   res.send('This is our DELETE route');
 });
 
