@@ -1,25 +1,10 @@
-# STEP 6: Refactoring and creating a more sophisticated application
+# STEP 7: Adding Persistent Storage with MongoDB
 
-Let's refactor our application into a simple messaging app.
+Let's create a database file `db.js`. This will be the file we use to connect to the database.
 
-Many applications we build will need to support CRUD operations. CRUD stands for 
+We also need to then define our schema. Separate our schema out into another folder called `model`.
+The model folder will contain the files that our application will use to interact with the database.
 
-**C**reate: Creating something (POST)
+For our application we only `Message` model but for more complex applications, we may require more. Let's follow best practices and create an `index.js` which will act as our model entry point. This allows us to interact with _only_ the `index.js`.
 
-**R**ead: Read something (GET)
-
-**U**pdate: Update something (PUT/PATCH)
-
-**D**elete: Delete something (DELETE)
-
-Let's refactor our server to support these routes. While were are refactoring, let's introduce some popular and useful libraries.
-
-# Useful libraries
-
-```sh
-npm i -S morgan cors
-```
-
-`morgan` is a library that helps us log incoming HTTP requests. The documentation can be found [here](https://www.npmjs.com/package/morgan).
-
-`cors` is a library that helps us manage our cross origin request permissions. The documentation can be found [here](https://www.npmjs.com/package/cors)
+Although our application works right now, we are violating some best practices. Let's refactor in the next step to follow best practices.
