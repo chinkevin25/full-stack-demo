@@ -10,7 +10,10 @@ class App extends React.Component {
     };
   }
 
-  // This function will handle fetching all the messages from the server.
+  componentDidMount() {
+    this.getAllMessages();
+  }
+
   getAllMessages() {
     $.ajax({
       url: '/api/messages/',
@@ -20,16 +23,11 @@ class App extends React.Component {
     });
   }
 
-  // This function will handle the creation of a new message.
   createNewMessage() {
-    // object deconstruction. This is the same as writing:
-    // const newMessage = this.state.newMessage
     const { newMessage } = this.state;
     const payload = {
       text: newMessage,
     };
-    // Notice that the data is a stringified JSON object. The contentType will need to be specified
-    // so the server knows how to handle the information we're about to send.
     $.ajax({
       url: '/api/messages/',
       method: 'POST',
@@ -45,9 +43,6 @@ class App extends React.Component {
   }
 
   handleFormSubmit(e) {
-    // Many HTML elements have default behaviors. When a form is submitted it
-    // will try to navigate to a specified page. When a page is not specified,
-    // it will default to redirecting to the current page which will refresh the page
     e.preventDefault();
     this.createNewMessage();
   }
@@ -61,8 +56,6 @@ class App extends React.Component {
             type="text"
             placeholder="What's your message"
             onChange={e => this.handleTextChange(e)}
-            // It's the React way to make inputs controlled by state. React needs to know what
-            // is in the input box.
             value={this.state.newMessage}
           />
           <input type="submit" />
@@ -73,6 +66,4 @@ class App extends React.Component {
     );
   }
 }
-
-// Dont forget to export the App so we can use it in index.jsx
 export default App;
