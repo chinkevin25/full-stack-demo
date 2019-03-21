@@ -20,5 +20,9 @@ Use this as a **tool** to understand larger code bases. **Do not** memorize the 
 
 `git checkout -f 5-creating-requests`
 
+`git checkout -f 6-refactor-application`
+
+`git checkout -f 7-database`
+
 
 Use the commands above to navigate between branches. 
