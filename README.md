@@ -12,7 +12,7 @@ curl -X GET 127.0.0.1:3000/api/cohort/107
 
 ```sh
 curl -X GET 127.0.0.1:3000/api/cohort/100
-> HRSF-100 is the best
+> HRSF-100 is the worst
 ```
 We can also use Postman to test out end point.
 
